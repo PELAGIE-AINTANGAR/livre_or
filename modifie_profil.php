@@ -4,7 +4,7 @@ include_once 'connexion_base.php';
 include_once 'verifie_password.php';
 //verifie si l'utilisateur est connecter
 
-$base = new database('localhost','root','root','livreor');
+$base = new database();
 $pdo = $base->connect();
 
 
