@@ -17,7 +17,7 @@ class seConnecter{
             $login = $_POST["login"];
             $password = $_POST["password"];
     
-            $conn = new database('localhost','root','root','livreor');
+            $conn = new database();
             $pdo = $conn->connect();
             $sql = "SELECT * FROM user WHERE login = '$login' and password = '$password'";
             $result = $pdo->query($sql);
