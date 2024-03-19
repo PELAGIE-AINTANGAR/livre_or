@@ -10,8 +10,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["new_password"];
     $passwordconfir = $_POST["new_passwordconfir"];
     
-    $base = new database('localhost','root','root','livreor');
-    $pdo = $base->connect();
+
+    $conn = new database();
+    $pdo = $conn->connect();
     $verif = new verifi_password();
     // $verif->verifi_password($password);
 
