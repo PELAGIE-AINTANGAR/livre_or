@@ -31,7 +31,7 @@ if (isset($_SESSION['user_infos']) AND isset($_POST['coment']))
     $user_infos = $_SESSION['user_infos'];
     $coment = htmlentities($_POST['coment']);
     $coment = nl2br($coment); 
-    $pdo = (new database('localhost','root', 'root', 'livreor'))->connect();
+    $pdo = (new database())->connect();
     $pdo->beginTransaction();
 
     //$stmt1 = $pdo->prepare("INSERT INTO user (login, password) VALUES (:login, DEFAULT)");
@@ -64,7 +64,7 @@ if (isset($_SESSION['user_infos']) AND isset($_POST['coment']))
 </p>
 </form>
 <?php
-$pdo = (new database('localhost','root', 'root', 'livreor'))->connect();
+$pdo = (new database())->connect();
 $reponse = $pdo->query('SELECT c.*, u.login FROM coment c INNER JOIN user u ON c.id_user = u.id ORDER BY c.id DESC LIMIT 0, 10');
 $rows = $reponse->fetchAll(PDO::FETCH_ASSOC);
 
