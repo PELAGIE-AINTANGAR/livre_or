@@ -24,7 +24,7 @@ if (isset($_SESSION['user_infos'])){
         // var_dump($login);
         // var_dump($password);
         //verifie si le mot de passe est identique
-        if ($verif->verifi_password($password) == true){
+        if ($verif->validatePassword($password)){
            
             if ($password == $passwordconfir && $login != $_SESSION['user_infos']['login'] && $password != $_SESSION['user_infos']['password']){
                 //ajouter l'utilisateur dans la base de donnée
