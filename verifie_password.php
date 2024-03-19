@@ -2,7 +2,7 @@
 class verifi_password{
 
 //creation de la fonction qui verifie le mot de passe
-    public function verifi_password($password){
+    public function validatePassword($password){
         $maj= preg_match('@[A-Z]@', $password);
         $min= preg_match('@[a-z]@', $password);
         $spe= preg_match('@[^\w]@', $password);
@@ -17,4 +17,3 @@ class verifi_password{
   
 
 }
-?>
